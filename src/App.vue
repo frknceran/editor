@@ -1,17 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <input type="text" v-model="title" /> -->
+    <!--<input type="text" :value="title" @input = "title = $event.target.value" />-->
+    <!--<editor v-model="content"></editor>-->
+    <date-picker v-model="date"></date-picker>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+//import Editor from "./components/Editor"
+import DatePicker from "./components/DatePicker"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    //Editor,
+    DatePicker
+  },
+
+  data() {
+    return {
+      title: "",
+      content: "",
+      date: {
+        day: null,
+        month: null,
+        year: null
+      }
+    }
   }
 }
 </script>
